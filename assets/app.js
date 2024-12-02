@@ -1,12 +1,21 @@
 const num = document.querySelector(".num");
 const limpar = document.querySelector(".limpar");
 const paragrafo = document.querySelector("p");
+const container = document.querySelector(".bar");
 
 num.addEventListener("click", function () {
-  let valorAleatorio1 = Math.floor(Math.random() * 100);
-  let valorAleatorio2 = Math.floor(Math.random() * 100);
-  let valorAleatorio3 = Math.floor(Math.random() * 100);
-  let valorAleatorio4 = Math.floor(Math.random() * 100);
-  let valorAleatorio5 = Math.floor(Math.random() * 100);
-  paragrafo.innerHTML = `${valorAleatorio1} - ${valorAleatorio2} - ${valorAleatorio3} - ${valorAleatorio4} - ${valorAleatorio5} `;
+  const valoresAleatorios = [];
+  for (let i = 0; i < 5; i++) {
+    const valorAleatorio = Math.floor(Math.random() * 100 + 1);
+    valoresAleatorios.push(valorAleatorio);
+  }
+
+  container.innerHTML = "";
+
+  valoresAleatorios.forEach((valor) => {
+    container.innerHTML += `
+      <div class="bar">
+        <span class="foo">${valor}</span>
+      </div>`;
+  });
 });
