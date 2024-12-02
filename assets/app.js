@@ -10,6 +10,8 @@ num.addEventListener("click", function () {
     valoresAleatorios.push(valorAleatorio);
   }
 
+  valoresAleatorios.sort((a, b) => a - b);
+
   container.innerHTML = "";
 
   valoresAleatorios.forEach((valor) => {
